@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row align">
+        <div class="col-2 text-left">
+            <button type="button" (click)="onPrevious()" class="btn btn-outline-primary">
+                <i class="bi bi-arrow-left-circle"></i>
+            </button>
+        </div>
+        <div class="col-7 text-center"> 
+            <div class="card">
+                <img *ngIf="cardData" class="card-img-top" [src]='cardData?.image' alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{ cardData?.tittle }}</h5>
+                  <p class="card-text">{{ cardData?.desc }}</p>
+                  <a href="#" class="btn btn-primary">Delete</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-2 text-right">
+            <button [disabled]='count === cardDataArray.length - 1' appCorouselNext type="button" (click)="onNext()" class="btn btn-outline-primary">
+                <i class="bi bi-arrow-right-circle"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- <carousel
+[images]="images"
+[cellsToShow]="1"
+[loop]="true"
+[autoplay]="true"
+[autoplayInterval]="1000"
+></carousel> -->
